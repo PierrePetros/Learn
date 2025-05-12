@@ -1,0 +1,629 @@
+/* Общие базовые стили для всего сайта */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Более универсальный шрифт */
+  background-color: #f4f4f4; /* Светло-серый фон */
+  color: #333; /* Темно-серый текст */
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Обертка приложения */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Заголовок сайта */
+.app-header {
+  background-color: #3498db; /* Яркий синий */
+  color: #fff; /* Белый текст */
+  text-align: center;
+  padding: 1.5rem 0; /* Увеличен отступ */
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Больший размер шрифта для заголовка */
+    font-weight: 700; /* Жирный шрифт */
+}
+
+/* Основной контент страницы */
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  width: 80%;
+  max-width: 1200px; /* Максимальная ширина для удобства чтения */
+  margin: 0 auto; /* Центрирование */
+  background-color: #fff;
+  border-radius: 12px; /* Больше скругление */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Более выраженная тень */
+}
+
+/* Футер сайта */
+.app-footer {
+  background-color: #3498db; /* Яркий синий */
+  color: #fff; /* Белый текст */
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* Общие стили для форм */
+form,
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; /* Увеличенная ширина */
+  margin: 0 auto;
+  padding: 30px; /* Увеличены отступы */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Мягкая тень */
+}
+
+/* Заголовки */
+h2 {
+  text-align: center;
+  color: #3498db; /* Яркий синий */
+  margin-bottom: 1.5rem; /* Отступ снизу */
+}
+
+/* Метки */
+label {
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600; /* Полужирный шрифт */
+  color: #555; /* Темнее цвет */
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="password"],
+textarea {
+  padding: 1rem; /* Увеличен внутренний отступ */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1.1rem; /* Увеличен размер шрифта */
+  width: 100%;
+  resize: vertical;
+  margin-bottom: 1.5rem; /* Увеличен отступ */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: #3498db; /* Яркий синий цвет при фокусе */
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Подсветка при фокусе */
+}
+
+/* Стиль для кнопок */
+button {
+  background-color: #2ecc71; /* Зеленый */
+  color: #fff;
+  padding: 1rem 2rem; /* Увеличены отступы */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem; /* Увеличен размер шрифта */
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #27ae60; /* Более темный зеленый */
+}
+
+/* Стиль для пагинации */
+.pagination {
+  display: flex;
+  justify-content: center; /* Центрирование */
+  margin-top: 2rem;
+}
+
+.pagination-button {
+  background-color: #3498db; /* Яркий синий */
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 0.5rem; /* Отступ между кнопками */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.pagination-button:disabled {
+  background-color: #95a5a6; /* Серый цвет для отключенной кнопки */
+  cursor: not-allowed;
+}
+
+.pagination-button:hover:enabled {
+  background-color: #2980b9; /* Более темный синий */
+}
+
+/* Стиль короткой ссылки "Назад" */
+.back-link-short {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #3498db; /* Яркий синий */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.back-link-short:hover {
+  background-color: #2980b9; /* Более темный синий */
+}
+
+/* Сообщения загрузки и ошибок */
+.loading-message {
+  text-align: center;
+  padding: 1.5rem;
+  font-style: italic;
+  color: #777;
+}
+
+.error-message {
+  text-align: center;
+  padding: 1.5rem;
+  color: #c0392b; /* Красный цвет */
+  border: 1px solid #e74c3c; /* Красный цвет */
+  border-radius: 6px;
+  background-color: #fdedec;
+}
+
+/* Секции для песочницы и выполнения кода */
+.sandbox-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sandbox-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: #555;
+}
+
+/* Текстовое поле для песочницы */
+.sandbox-section textarea {
+  width: 100%;
+  min-height: 200px; /* Увеличенная высота */
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  resize: vertical;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.sandbox-section textarea:focus {
+  border-color: #3498db; /* Яркий синий цвет при фокусе */
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Подсветка при фокусе */
+}
+
+/* Кнопка выполнения кода */
+.execution-button {
+  background-color: #3498db; /* Яркий синий */
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.execution-button:hover {
+  background-color: #2980b9; /* Более темный синий */
+}
+
+/* Стиль калькулятора */
+.calculator {
+  width: 320px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 12px; /* Больше скругление */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #f8f8f8;
+}
+
+.calculator input[type="text"] {
+  width: 100%;
+  padding: 20px; /* Увеличен отступ */
+  font-size: 32px; /* Больше шрифт */
+  text-align: right;
+  border: none;
+  background-color: #fff;
+  color: #222;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: #ddd;
+}
+
+.calculator-grid button {
+  padding: 20px; /* Увеличен отступ */
+  font-size: 24px; /* Больше шрифт */
+  border: none;
+  background-color: #fff; /* Все кнопки белые */
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, transform 0.1s ease;
+  outline: none;
+  box-shadow: none;
+}
+
+.calculator-grid button:hover {
+  background-color: #f0f0f0;
+}
+
+.calculator-grid button:active {
+  background-color: #e0e0e0;
+  transform: scale(0.95);
+}
+
+.calculator-grid button:focus {
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3); /* Подсветка при фокусе */
+}
+
+.calculator-grid button.span-two {
+  grid-column: span 2;
+}
+
+/* Специальный стиль для кнопки AC */
+.calculator-grid button:first-child {
+  background-color: #e74c3c; /* Красный цвет для AC */
+  color: white;
+}
+
+.calculator-grid button:first-child:hover {
+  background-color: #c0392b;
+}
+
+/* Ссылка "Назад к математике" */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #3498db; /* Яркий синий */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px; /* Больше скругление */
+  transition: background-color 0.2s ease;
+}
+
+.back-link:hover {
+  background-color: #2980b9; /* Более темный синий */
+}
+
+.profile-container {
+  text-align: center;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-content {
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-details {
+  margin-bottom: 2rem;
+}
+
+.profile-picture-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-picture {
+  width: 180px; /* Больше фото */
+  height: 180px; /* Больше фото */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ddd; /* Более толстая рамка */
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.profile-picture-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.upload-button,
+.save-button,
+.delete-button {
+  background-color: #3498db;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+.upload-button:hover,
+.save-button:hover,
+.delete-button:hover {
+  background-color: #2980b9;
+}
+
+.profile-actions {
+  margin-top: 2rem;
+}
+
+/* Subject Page Styles */
+.subject-page {
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Увеличенное расстояние между кнопками */
+  margin-bottom: 2.5rem;
+}
+
+.option-button {
+  background-color: #3498db;
+  color: white;
+  padding: 1rem 2rem; /* Увеличенные внутренние отступы */
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem; /* Увеличенный размер шрифта */
+  transition: background-color 0.15s ease-in-out;
+  display: inline-block; /* Предотвращает схлопывание отступов */
+}
+
+.option-button:hover {
+  background-color: #2980b9;
+}
+
+.back-link {
+  display: block;
+  margin-top: 2.5rem;
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1rem; /* Увеличенный размер шрифта */
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Theory Page Styles */
+.theory-page {
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.pagination-button {
+  background-color: #27ae60; /* Зеленый цвет */
+  color: white;
+  padding: 1rem 2rem;
+  margin: 0 0.8rem; /* Больше отступы */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem; /* Увеличенный размер шрифта */
+  transition: background-color 0.15s ease-in-out;
+}
+
+.pagination-button:hover {
+  background-color: #218838;
+}
+
+.back-link {
+  display: block;
+  margin-top: 2.5rem;
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1.1rem; /* Увеличенный размер шрифта */
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* BackLink Component Styles (если необходимо) */
+.back-link-short {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #3498db; /* Яркий синий */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.back-link-short:hover {
+    background-color: #2980b9; /* Более темный синий */
+}
+
+/* Auth Styles (Login/Register) */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.auth-form h2 {
+    text-align: center;
+    color: #3498db;
+    margin-bottom: 1.5rem;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    width: 100%;
+    resize: vertical;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.auth-form input[type="text"]:focus,
+.auth-form input[type="password"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.auth-form button[type="submit"] {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.auth-form button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.auth-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Specific Styles for Components */
+
+/* Informatics Subject Page */
+.subject-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Theory Page (Practice, Theory) */
+.theory-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Calculator Styles */
+.calculator-grid button {
+    /* ... your existing styles */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.calculator-grid button:hover {
+    background-color: #eee;
+}
+
+.calculator-grid button:active {
+    background-color: #ddd;
+    transform: scale(0.98);
+}
+
+/* Добавляем стиль для выравнивания текста по ширине */
+.theory-page p {
+  text-align: justify;
+}
+
+/* Additional General Styles */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+ul, ol {
+    padding-left: 25px;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+code {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace, monospace;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 2rem 0;
+}
